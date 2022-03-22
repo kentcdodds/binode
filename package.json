@@ -14,9 +14,18 @@
     "which": "^2.0.2"
   },
   "bin": {
-    "binode": "./bin.js"
+    "binode": "bin.js"
   },
   "files": [
     "./bin.js"
-  ]
+  ],
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentcdodds/binode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kentcdodds/binode/issues"
+  },
+  "homepage": "https://github.com/kentcdodds/binode#readme"
 }
