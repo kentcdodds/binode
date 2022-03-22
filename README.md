@@ -32,7 +32,7 @@ People can install this package and then do this instead:
 binode --inspect-brk -- sndwch --topping ham --topping cheese
 ```
 
-That's it. The implimentation is pretty simple as well.
+That's it. The implementation is pretty simple as well.
 
 Here's everything you need to know:
 
