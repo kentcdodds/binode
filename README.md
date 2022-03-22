@@ -34,6 +34,12 @@ binode --inspect-brk -- sndwch --topping ham --topping cheese
 
 That's it. The implimentation is pretty simple as well.
 
+Here's everything you need to know:
+
+- Everything on the left side of the `--` is flags for node
+- The first thing after the `--` is the binary you want to use
+- Everything after the binary you want to use is flags for that binary
+
 ## Installation
 
 ```
