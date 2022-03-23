@@ -38,7 +38,7 @@ Sometimes a package has a different binary name from the package name (like [`wh
 binode --require ./mocks -- @remix-run/dev:remix dev
 ```
 
-That's it..
+That's it.
 
 Here's everything you need to know:
 
