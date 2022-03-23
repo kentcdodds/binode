@@ -10,7 +10,8 @@
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
   "license": "MIT",
   "dependencies": {
-    "resolve-bin": "^1.0.0"
+    "resolve-bin": "^1.0.0",
+    "which": "^2.0.2"
   },
   "bin": {
     "binode": "bin.js"
