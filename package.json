@@ -5,7 +5,7 @@
   "main": "bin.js",
   "type": "module",
   "scripts": {
-    "test": "./bin.js --inspect -- cowsay yo"
+    "test": "node bin.js --inspect -- cowsay yo"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
