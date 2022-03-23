@@ -5,7 +5,7 @@
   "main": "bin.js",
   "type": "module",
   "scripts": {
-    "test": "node bin.js --inspect -- cowsay yo"
+    "test": "node bin.js --inspect --debug-port 1234 -- cowsay yo how you doin"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",

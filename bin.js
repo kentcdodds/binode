@@ -12,6 +12,9 @@ const [bin, ...binArgs] = args.slice(separatorIndex + 1);
 const whichBinPath = which.sync(bin);
 
 spawnSync(whichBinPath, binArgs, {
-  env: { ...process.env, NODE_OPTIONS: nodeArgs },
+  env: {
+    ...process.env,
+    NODE_OPTIONS: nodeArgs.join(' ')
+  },
   stdio: "inherit",
 });
