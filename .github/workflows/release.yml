@@ -12,9 +12,8 @@ jobs:
   validate:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
         node: [12, 14, 16]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v2
@@ -32,8 +31,27 @@ jobs:
       - name: 🧪 Run tests
         run: npm test
 
+  validate-windows:
+    runs-on: windows-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+
+      - name: 🧪 Run tests
+        run: npm test
+
   release:
-    needs: validate
+    needs: [validate, validate-windows]
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout repo
