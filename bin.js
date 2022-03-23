@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "child_process";
-import which from "which";
+const { spawnSync } = require("child_process");
+const resolveBin = require("resolve-bin");
 
 const [node, me, ...args] = process.argv;
 
@@ -9,8 +9,8 @@ const separatorIndex = args.findIndex((arg) => arg === "--");
 const nodeArgs = args.slice(0, separatorIndex);
 const [bin, ...binArgs] = args.slice(separatorIndex + 1);
 
-const fullPath = await which(bin);
+const resolvedBinPath = resolveBin.sync(bin);
 
-const fullArgs = [...nodeArgs, fullPath, ...binArgs];
+const fullArgs = [...nodeArgs, resolvedBinPath, ...binArgs];
 
 spawnSync(node, fullArgs, { stdio: "inherit" });
