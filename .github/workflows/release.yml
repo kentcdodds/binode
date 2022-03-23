@@ -28,6 +28,12 @@ jobs:
         with:
           useLockFile: false
 
+      - name: 📥 Download test deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+          working-directory: test
+
       - name: 🧪 Run tests
         run: npm test
 
@@ -46,6 +52,12 @@ jobs:
         uses: bahmutov/npm-install@v1
         with:
           useLockFile: false
+
+      - name: 📥 Download test deps
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+          working-directory: test
 
       - name: 🧪 Run tests
         run: npm test
