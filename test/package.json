@@ -2,10 +2,14 @@
   "name": "test",
   "type": "module",
   "scripts": {
-    "run-binode": "binode --inspect --require ./require-example.cjs -- cowsay -b resistance is futile"
+    "run-binode": "binode --inspect --require ./require-example.cjs -- cowsay -b resistance is futile",
+    "run-binode-pkg": "binode --inspect -- which:node-which node",
+    "run-binode-ctx": "binode --require ./setup-global.cjs -- nnode check-global.cjs"
   },
   "dependencies": {
     "binode": "file:..",
-    "cowsay": "^1.5.0"
+    "cowsay": "^1.5.0",
+    "nnode": "file:nnode",
+    "which": "^2.0.2"
   }
 }

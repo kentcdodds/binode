@@ -32,13 +32,20 @@ People can install this package and then do this instead:
 binode --inspect-brk -- sndwch --topping ham --topping cheese
 ```
 
-That's it. The implementation is pretty simple as well.
+Sometimes a package has a different binary name from the package name (like [`which`](https://npm.im/which) calls it's binary `node-which`). There's no way to do a reverse-lookup of a binary to find the package for it, so you have to supply that by providing the package name along with the executable you want. Something like this:
+
+```sh
+binode --require ./mocks -- @remix-run/dev:remix dev
+```
+
+That's it..
 
 Here's everything you need to know:
 
 - Everything on the left side of the `--` is flags for node
 - The first thing after the `--` is the binary you want to use
 - Everything after the binary you want to use is flags for that binary
+- If the package name and binary name are different, you must supply both after the `--` by separating them by a `:` (for example: `pkgName:binName`).
 
 ## Installation
 

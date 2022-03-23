@@ -3,16 +3,13 @@
   "version": "0.0.0-semantically-released",
   "description": "Allows you to specify a --bin flag for node",
   "main": "bin.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "node test"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
   "license": "MIT",
-  "dependencies": {
-    "which": "^2.0.2"
-  },
   "bin": {
     "binode": "bin.js"
   },
@@ -26,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/kentcdodds/binode/issues"
   },
-  "homepage": "https://github.com/kentcdodds/binode#readme"
+  "homepage": "https://github.com/kentcdodds/binode#readme",
+  "dependencies": {
+    "resolve": "^1.22.0"
+  }
 }

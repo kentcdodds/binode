@@ -1,22 +1,32 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "child_process";
-import which from "which";
+const path = require("path");
+const { spawnSync } = require("child_process");
+const resolve = require("resolve");
 
 const [node, me, ...args] = process.argv;
 
 const separatorIndex = args.findIndex((arg) => arg === "--");
 const nodeArgs = args.slice(0, separatorIndex);
-const [bin, ...binArgs] = args.slice(separatorIndex + 1);
+const [binPkg, ...binArgs] = args.slice(separatorIndex + 1);
 
-const whichBinPath = which.sync(bin);
+let binName, pkgName;
 
-spawnSync(whichBinPath, binArgs, {
-  env: {
-    ...process.env,
-    NODE_OPTIONS: [process.env.NODE_OPTIONS, ...nodeArgs]
-      .filter(Boolean)
-      .join(" "),
-  },
+if (binPkg.includes(":")) {
+  [pkgName, binName] = binPkg.split(":");
+} else {
+  binName = pkgName = binPkg;
+}
+
+const modPkgPath = resolve.sync(`${pkgName}/package.json`, {
+  basedir: process.cwd(),
+});
+const modPkgDir = path.dirname(modPkgPath);
+const pkg = require(modPkgPath);
+const binRelativePath =
+  typeof pkg.bin === "string" ? pkg.bin : pkg.bin[binName];
+const binPath = path.join(modPkgDir, binRelativePath);
+
+spawnSync(node, [...nodeArgs, binPath, ...binArgs], {
   stdio: "inherit",
 });
