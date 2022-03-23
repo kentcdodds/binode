@@ -5,7 +5,7 @@
   "main": "bin.js",
   "type": "module",
   "scripts": {
-    "test": "node bin.js --inspect --debug-port 1234 -- cowsay yo how you doin"
+    "test": "node test"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
@@ -26,8 +26,5 @@
   "bugs": {
     "url": "https://github.com/kentcdodds/binode/issues"
   },
-  "homepage": "https://github.com/kentcdodds/binode#readme",
-  "devDependencies": {
-    "cowsay": "^1.5.0"
-  }
+  "homepage": "https://github.com/kentcdodds/binode#readme"
 }

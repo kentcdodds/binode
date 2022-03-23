@@ -14,7 +14,9 @@ const whichBinPath = which.sync(bin);
 spawnSync(whichBinPath, binArgs, {
   env: {
     ...process.env,
-    NODE_OPTIONS: nodeArgs.join(' ')
+    NODE_OPTIONS: [process.env.NODE_OPTIONS, ...nodeArgs]
+      .filter(Boolean)
+      .join(" "),
   },
   stdio: "inherit",
 });

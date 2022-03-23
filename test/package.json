@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "type": "module",
+  "scripts": {
+    "run-binode": "binode --inspect --require ./require-example.cjs -- cowsay -b resistance is futile"
+  },
+  "dependencies": {
+    "binode": "file:..",
+    "cowsay": "^1.5.0"
+  }
+}
