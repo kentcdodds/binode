@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const { spawnSync } = require("child_process");
-const which = require("which");
+import { spawnSync } from "child_process";
+import which from "which";
 
 const [node, me, ...args] = process.argv;
 
