@@ -83,7 +83,7 @@ function testThree() {
   if (result.status !== 0) {
     throw new Error(
       `
-npm run run-binode-pkg failed with status ${result.status}:
+npm run run-binode-ctx failed with status ${result.status}:
 
 --------- stderr ---------
 ${stderr}
