@@ -2,19 +2,19 @@
   "name": "binode",
   "version": "0.0.0-semantically-released",
   "description": "Allows you to specify a --bin flag for node",
-  "main": "bin.js",
-  "type": "commonjs",
   "scripts": {
-    "test": "node test"
+    "test": "node test/index.mjs && node test/index.js"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
   "license": "MIT",
   "bin": {
-    "binode": "bin.js"
+    "binode": "bin.cjs",
+    "binode-esm": "bin.mjs"
   },
   "files": [
-    "./bin.js"
+    "./bin.cjs",
+    "./bin.mjs"
   ],
   "repository": {
     "type": "git",

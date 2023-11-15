@@ -4,7 +4,10 @@
   "scripts": {
     "run-binode": "binode --inspect --require ./require-example.cjs -- cowsay -b resistance is futile",
     "run-binode-pkg": "binode --inspect -- which:node-which node",
-    "run-binode-ctx": "binode --require ./setup-global.cjs -- nnode check-global.cjs"
+    "run-binode-ctx": "binode --require ./setup-global.cjs -- nnode check-global.cjs",
+    "run-binode-esm": "binode-esm --inspect --import ./require-example.js -- cowsay -b resistance is futile",
+    "run-binode-pkg-esm": "binode-esm --inspect -- which:node-which node",
+    "run-binode-ctx-esm": "binode-esm --import ./setup-global.js -- nnode check-global.js"
   },
   "dependencies": {
     "binode": "file:..",
